@@ -48,6 +48,15 @@
         };
     };
 
+    macros {
+        consolelog: consolelog {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp O &kp N &kp S &kp O &kp L &kp E &kp DOT &kp L &kp O &kp G &kp LPAR &kp RPAR &kp LEFT>;
+            label = "CONSOLELOG";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -91,7 +100,7 @@
             bindings = <
 &none      &none  &none  &kp LS(LG(NUMBER_3))  &kp LS(LG(NUMBER_4))  &kp BSLH         &none             &none     &none          &none             &none  &none
 &kp LCTRL  &none  &none  &none                 &kp LS(LG(NUMBER_5))  &kp CAPSLOCK     &kp LEFT          &kp DOWN  &kp UP         &kp RIGHT         &none  &kp BSPC
-&kp LSHFT  &none  &none  &none                 &none                 &none            &kp K_MUTE        &none     &kp LESS_THAN  &kp GREATER_THAN  &none  &kp DEL
+&kp LSHFT  &none  &none  &none                 &none                 &consolelog      &kp K_MUTE        &none     &kp LESS_THAN  &kp GREATER_THAN  &none  &kp DEL
                          &trans                &trans                &kp LG(SPACE)    &kp K_PLAY_PAUSE  &trans    &kp LC(LG(Q))
             >;
         };
